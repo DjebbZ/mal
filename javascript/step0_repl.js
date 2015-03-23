@@ -17,14 +17,15 @@ function rep(x) {
 var readline = require("readline"),
     rl = readline.createInterface({
         input: process.stdin,
-        output: process.stdout
+        output: process.stdout,
+        terminal: false
     });
 
 rl.setPrompt("user> ");
 rl.prompt();
 
 rl.on("line", function(line) {
-    console.log(rep(line));
+    process.stdout.write(rep(line));
     rl.prompt();
 }).on("exit", function() {
     rl.close();
