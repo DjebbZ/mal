@@ -26,6 +26,7 @@ rl.prompt();
 
 rl.on("line", function(line) {
     process.stdout.write(rep(line));
+    process.stdout.write("\n");
     rl.prompt();
 }).on("exit", function() {
     rl.close();
